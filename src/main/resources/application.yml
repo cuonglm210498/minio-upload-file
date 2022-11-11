@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+minio:
+  endPoint: "http://localhost:9000"
+  accessKey: "minio-root-user"
+  secretKey: "minio-root-password"
+  bucketName: "com.lecuong"
+
+spring:
+  datasource:
+    username: root
+    password: Maiyeuem@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+# tai va cai dat docker
+# pull image tu docker hub ve may tinh: https://hub.docker.com/r/bitnami/minio
+# tao thu muc docker-compose va copy file minio.yml vao do
+# chay lenh docker compose -f .\minio.yml up -d
